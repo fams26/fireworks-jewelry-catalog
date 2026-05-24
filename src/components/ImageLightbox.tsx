@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ImageLightboxProps {
-  images: Array<{ url: string }>;
+  images: string[];
   initialIndex?: number;
   onClose: () => void;
 }
@@ -41,7 +41,7 @@ export default function ImageLightbox({
       {/* Imagen principal */}
       <div className="relative max-w-4xl max-h-[90vh] flex items-center justify-center">
         <img
-          src={images[currentIndex].url}
+          src={images[currentIndex]}
           alt={`Imagen ${currentIndex + 1}`}
           className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl"
         />
@@ -94,7 +94,7 @@ export default function ImageLightbox({
                   }`}
                 >
                   <img
-                    src={img.url}
+                    src={img}
                     alt={`Miniatura ${idx + 1}`}
                     className="w-full h-full object-cover"
                   />
