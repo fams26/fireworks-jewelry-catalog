@@ -32,7 +32,9 @@ export default function HeroSection() {
             Fireworks Jewelry
           </span>
           <br />
-          <span className="text-retro-yellow drop-shadow-lg">Addict</span>
+          <span className="bg-gradient-to-r from-retro-purple via-retro-pink to-retro-magenta bg-clip-text text-transparent">
+            Addict
+          </span>
         </h1>
 
         {/* Subtítulo */}
