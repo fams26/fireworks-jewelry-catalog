@@ -102,7 +102,7 @@ export default function AboutSection() {
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                 className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 sm:px-8 py-3 rounded-xl transition-all shadow-retro-md hover:shadow-lg"
               >
-                Contacta con Lylie
+                Contacta con Pame
               </a>
             </div>
           </div>

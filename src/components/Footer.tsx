@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-600 text-center sm:text-left">
             © {currentYear} <span className="font-bold text-retro-pink">Fireworks Jewelry Addict</span> by
-            Lylie. Todos los derechos reservados.
+            Pame. Todos los derechos reservados.
           </p>
 
           <div className="flex items-center gap-2 text-sm text-gray-600">

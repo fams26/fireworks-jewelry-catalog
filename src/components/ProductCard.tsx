@@ -49,7 +49,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
   const handleWhatsApp = (e: React.MouseEvent) => {
     e.stopPropagation();
     const message = encodeURIComponent(
-      `Hola Lylie 👋\n\nMe interesa el collar: *${field.Nombre}*\nSKU: ${field.SKU}\nPrecio: ₡${field.Precio.toLocaleString('es-CR')}\n\n¿Podrías compartirme más detalles?`
+      `Hola Pame 👋\n\nMe interesa el collar: *${field.Nombre}*\nSKU: ${field.SKU}\nPrecio: ₡${field.Precio.toLocaleString('es-CR')}\n\n¿Podrías compartirme más detalles?`
     );
     window.open(
       `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${message}`,
