@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Menu, X, Instagram, MessageCircle } from 'lucide-react';
-import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,16 +18,18 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative w-12 h-12 bg-gradient-to-br from-retro-yellow to-retro-pink rounded-full p-1 shadow-retro-md">
-              <div className="w-full h-full bg-white rounded-full flex items-center justify-center font-display font-bold text-retro-purple text-lg">
-                ✨
-              </div>
+            <div className="relative w-14 h-14 flex-shrink-0">
+              <img
+                src="/fireworks-logo.svg"
+                alt="Fireworks Jewelry Addict"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-display text-xl sm:text-2xl font-bold bg-gradient-to-r from-retro-purple to-retro-pink bg-clip-text text-transparent">
+              <h1 className="font-display text-xl sm:text-2xl font-black bg-gradient-to-r from-retro-purple to-retro-pink bg-clip-text text-transparent">
                 Fireworks
               </h1>
-              <p className="text-xs text-retro-magenta font-semibold">
+              <p className="text-xs sm:text-sm text-retro-magenta font-semibold">
                 Jewelry Addict
               </p>
             </div>
@@ -39,21 +40,21 @@ export default function Header() {
             <a
               href="#catalogo"
               onClick={() => handleScroll('catalogo')}
-              className="font-semibold text-retro-purple hover:text-retro-pink transition-colors"
+              className="font-semibold text-retro-purple hover:text-retro-pink transition-colors cursor-pointer"
             >
               Catálogo
             </a>
             <a
               href="#nosotros"
               onClick={() => handleScroll('nosotros')}
-              className="font-semibold text-retro-purple hover:text-retro-pink transition-colors"
+              className="font-semibold text-retro-purple hover:text-retro-pink transition-colors cursor-pointer"
             >
               Sobre Nosotros
             </a>
             <a
               href="#contacto"
               onClick={() => handleScroll('contacto')}
-              className="font-semibold text-retro-purple hover:text-retro-pink transition-colors"
+              className="font-semibold text-retro-purple hover:text-retro-pink transition-colors cursor-pointer"
             >
               Contacto
             </a>

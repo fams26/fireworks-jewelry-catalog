@@ -1,0 +1,50 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo amarillo superior -->
+  <circle cx="200" cy="80" r="60" fill="#FFE135"/>
+  
+  <!-- Flor en el círculo -->
+  <g transform="translate(200, 80)">
+    <!-- Pétalos -->
+    <circle cx="0" cy="-12" r="6" fill="#FF1493"/>
+    <circle cx="10" cy="-8" r="6" fill="#FF1493"/>
+    <circle cx="10" cy="8" r="6" fill="#FF1493"/>
+    <circle cx="0" cy="12" r="6" fill="#FF1493"/>
+    <circle cx="-10" cy="8" r="6" fill="#FF1493"/>
+    <circle cx="-10" cy="-8" r="6" fill="#FF1493"/>
+    <!-- Centro -->
+    <circle cx="0" cy="0" r="4" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Nube izquierda -->
+  <path d="M 80 120 Q 60 120 60 140 Q 60 160 80 160 L 180 160 Q 180 140 160 140 Q 140 140 140 120 Z" fill="#FFE135"/>
+  
+  <!-- Nube derecha -->
+  <path d="M 220 120 Q 200 120 200 140 Q 200 160 220 160 L 320 160 Q 320 140 300 140 Q 280 140 280 120 Z" fill="#FFE135"/>
+  
+  <!-- Texto FIREWORKS -->
+  <text x="200" y="155" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#6B3FA0">
+    FIREWORKS
+  </text>
+  
+  <!-- Diamantes decorativos -->
+  <g fill="#FF1493">
+    <!-- Arriba izquierda -->
+    <polygon points="110,95 115,105 110,115 105,105"/>
+    <!-- Arriba derecha -->
+    <polygon points="290,95 295,105 290,115 285,105"/>
+    <!-- Abajo izquierda -->
+    <polygon points="90,210 95,220 90,230 85,220"/>
+    <!-- Abajo derecha -->
+    <polygon points="310,210 315,220 310,230 305,220"/>
+  </g>
+  
+  <!-- Texto "JEWELRY ADDICT BY LYLIE" -->
+  <text x="200" y="250" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#FF1493">
+    JEWELRY ADDICT BY LYLIE
+  </text>
+  
+  <!-- Año ESTD 2024 -->
+  <text x="200" y="65" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6B3FA0">
+    ESTD 2024
+  </text>
+</svg>
