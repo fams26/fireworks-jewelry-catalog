@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FAF8F3;
+  color: #1A1A1A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka One', 'Poppins', sans-serif;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFE135;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF1493;
+}
+
+/* Botones base */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Imagenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animaciones personalizadas */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Cursor personalizado opcional */
+body {
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="%23FF1493" opacity="0.3"/><circle cx="16" cy="16" r="4" fill="%236B3FA0"/></svg>')
+    16 16,
+    auto;
+}
+
+/* Selección de texto */
+::selection {
+  background-color: #FFE135;
+  color: #6B3FA0;
+}
+
+/* Estilos para inputs */
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Estilos de scrollbar para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FFE135 #FAF8F3;
+}

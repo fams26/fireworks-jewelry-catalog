@@ -1,0 +1,62 @@
+[
+  {
+    "fields": {
+      "SKU": "FWJ-001",
+      "Nombre": "Collar Maxi Fucsia Dream",
+      "Descripción": "Collar maxi con cuentas grandes en fucsia neón y perlas blancas. Perfecta para looks retro-pop audaces. Cada cuenta es una explosión de color que te hará brillar.",
+      "Precio": 45000,
+      "Materiales": "Resina acrílica, perlas de agua dulce, acero inoxidable",
+      "Dimensiones": "45cm de largo, cuentas de 15mm",
+      "Categoría": "Maxi Cuentas",
+      "Disponibilidad": "Disponible"
+    }
+  },
+  {
+    "fields": {
+      "SKU": "FWJ-002",
+      "Nombre": "Collar Verde Encendido con Corazones",
+      "Descripción": "Verde lima vibrante con dijes de corazones acrílicos. Un collar que grita amor y energía. Minimalista pero con personalidad máxima.",
+      "Precio": 38000,
+      "Materiales": "Resina acrílica, dijes de corazón, cuerda encerada",
+      "Dimensiones": "50cm de largo, cuentas de 12mm",
+      "Categoría": "Con Dijes",
+      "Disponibilidad": "Disponible"
+    }
+  },
+  {
+    "fields": {
+      "SKU": "FWJ-003",
+      "Nombre": "Collar Dorado Facetado",
+      "Descripción": "Gemas facetadas translúcidas en tonos dorados con perlas naturales. Lujo artesanal que brilla bajo la luz. Elegancia retro elevada.",
+      "Precio": 52000,
+      "Materiales": "Gemas facetadas translúcidas, perlas naturales, oro quirúrgico",
+      "Dimensiones": "42cm de largo, gemas de 14mm",
+      "Categoría": "Minimalista",
+      "Disponibilidad": "Bajo Pedido"
+    }
+  },
+  {
+    "fields": {
+      "SKU": "FWJ-004",
+      "Nombre": "Collar Arcoíris Maxi Maximalista",
+      "Descripción": "¡EXPLOSIÓN DE COLOR! Mezcla de todas las tonalidades vibrantes: fucsia, lima, amarillo, cyan, morado. Una pieza única que no pasarás desapercibida.",
+      "Precio": 55000,
+      "Materiales": "Resina acrílica premium, perlas mixtas, acero inoxidable",
+      "Dimensiones": "48cm de largo, cuentas variadas 12-18mm",
+      "Categoría": "Maxi Cuentas",
+      "Disponibilidad": "Disponible"
+    }
+  },
+  {
+    "fields": {
+      "SKU": "FWJ-005",
+      "Nombre": "Collar Negro y Plata Minimalista",
+      "Descripción": "Sofisticación con un toque retro. Negro profundo con acentos plateados. Perfecto para completar cualquier outfit.",
+      "Precio": 35000,
+      "Materiales": "Resina acrílica, cuentas de acrílico plateado, acero",
+      "Dimensiones": "40cm de largo, cuentas de 10mm",
+      "Categoría": "Minimalista",
+      "Disponibilidad": "Agotado"
+    }
+  }
+]
