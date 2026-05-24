@@ -49,7 +49,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent(
-      `Hola Lylie 👋\n\nMe interesa el collar: *${field.Nombre}*\n\n📋 Detalles:\nSKU: ${field.SKU}\nPrecio: ₡${field.Precio.toLocaleString('es-CR')}\nMateriales: ${field.Materiales}\nMedidas: ${field.Dimensiones}\n\n¿Puedo hacer mi pedido?`
+      `Hola Pame 👋\n\nMe interesa el collar: *${field.Nombre}*\n\n📋 Detalles:\nSKU: ${field.SKU}\nPrecio: ₡${field.Precio.toLocaleString('es-CR')}\nMateriales: ${field.Materiales}\nMedidas: ${field.Dimensiones}\n\n¿Puedo hacer mi pedido?`
     );
     window.open(
       `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${message}`,
@@ -208,7 +208,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 💌 ENVÍOS A COSTA RICA
               </p>
               <p className="text-xs text-gray-700">
-                Coordina directamente con Lylie por WhatsApp para detalles de
+                Coordina directamente con Pame por WhatsApp para detalles de
                 envío y formas de pago.
               </p>
             </div>
