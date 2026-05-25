@@ -28,6 +28,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showLightbox, setShowLightbox] = useState(false);
+  const [showShareMenu, setShowShareMenu] = useState(false);
 
   const field = product.fields;
 
@@ -51,12 +52,65 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent(
-      `Hola Pame 👋\n\nMe interesa el collar: *${field.Nombre}*\n\n📋 Detalles:\nSKU: ${field.SKU}\nPrecio: ₡${field.Precio.toLocaleString('es-CR')}\nMateriales: ${field.Materiales}\nMedidas: ${field.Dimensiones}\n\n¿Puedo hacer mi pedido?`
+      `Hola Lylie 👋\n\nMe interesa el collar: *${field.Nombre}*\n\n📋 Detalles:\nSKU: ${field.SKU}\nPrecio: ₡${field.Precio.toLocaleString('es-CR')}\nMateriales: ${field.Materiales}\nMedidas: ${field.Dimensiones}\n\n¿Puedo hacer mi pedido?`
     );
     window.open(
       `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${message}`,
       '_blank'
     );
+  };
+
+  const handleShare = (platform: string) => {
+    const productUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const text = `Mira este collar hermoso: ${field.Nombre} - ₡${field.Precio.toLocaleString('es-CR')} 💎✨`;
+    const imageUrl = currentImage;
+
+    switch (platform) {
+      case 'whatsapp':
+        const waMessage = encodeURIComponent(
+          `${text}\n\n🔗 ${productUrl}\n\nDe Fireworks Jewelry Addict 🎨`
+        );
+        window.open(`https://wa.me/?text=${waMessage}`, '_blank');
+        break;
+
+      case 'facebook':
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            productUrl
+          )}`,
+          '_blank'
+        );
+        break;
+
+      case 'twitter':
+        const twitterText = encodeURIComponent(
+          `${text} - Fireworks Jewelry Addict 🎨 ${productUrl}`
+        );
+        window.open(
+          `https://twitter.com/intent/tweet?text=${twitterText}`,
+          '_blank'
+        );
+        break;
+
+      case 'instagram':
+        // Instagram no permite compartir directamente, abrimos el perfil
+        window.open(
+          process.env.NEXT_PUBLIC_INSTAGRAM_URL,
+          '_blank'
+        );
+        break;
+
+      case 'copy':
+        // Copiar link al portapapeles
+        const textToCopy = `${field.Nombre} - ₡${field.Precio.toLocaleString('es-CR')}\n${text}`;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          alert('¡Copiado al portapapeles!');
+          setShowShareMenu(false);
+        });
+        break;
+    }
+
+    setShowShareMenu(false);
   };
 
   const availabilityInfo = getAvailabilityStatus(field.Disponibilidad);
@@ -212,10 +266,52 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                     Favorito
                   </button>
 
-                  <button className="flex-1 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 bg-gray-100 text-gray-700 border-2 border-gray-200 hover:border-retro-purple transition-all">
-                    <Share2 className="w-5 h-5" />
-                    Compartir
-                  </button>
+                  {/* Botón Compartir con menú */}
+                  <div className="flex-1 relative">
+                    <button
+                      onClick={() => setShowShareMenu(!showShareMenu)}
+                      className="w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 bg-gray-100 text-gray-700 border-2 border-gray-200 hover:border-retro-purple transition-all"
+                    >
+                      <Share2 className="w-5 h-5" />
+                      Compartir
+                    </button>
+
+                    {/* Menú de compartir */}
+                    {showShareMenu && (
+                      <div className="absolute bottom-full right-0 mb-2 bg-white rounded-xl shadow-lg border-2 border-retro-purple/20 overflow-hidden z-10 min-w-48">
+                        <button
+                          onClick={() => handleShare('whatsapp')}
+                          className="w-full px-4 py-3 text-left hover:bg-green-50 border-b border-gray-100 font-semibold text-sm text-gray-700 flex items-center gap-2"
+                        >
+                          <span className="text-lg">💬</span> WhatsApp
+                        </button>
+                        <button
+                          onClick={() => handleShare('facebook')}
+                          className="w-full px-4 py-3 text-left hover:bg-blue-50 border-b border-gray-100 font-semibold text-sm text-gray-700 flex items-center gap-2"
+                        >
+                          <span className="text-lg">f</span> Facebook
+                        </button>
+                        <button
+                          onClick={() => handleShare('twitter')}
+                          className="w-full px-4 py-3 text-left hover:bg-blue-50 border-b border-gray-100 font-semibold text-sm text-gray-700 flex items-center gap-2"
+                        >
+                          <span className="text-lg">𝕏</span> Twitter/X
+                        </button>
+                        <button
+                          onClick={() => handleShare('instagram')}
+                          className="w-full px-4 py-3 text-left hover:bg-pink-50 border-b border-gray-100 font-semibold text-sm text-gray-700 flex items-center gap-2"
+                        >
+                          <span className="text-lg">📷</span> Instagram
+                        </button>
+                        <button
+                          onClick={() => handleShare('copy')}
+                          className="w-full px-4 py-3 text-left hover:bg-purple-50 font-semibold text-sm text-gray-700 flex items-center gap-2"
+                        >
+                          <span className="text-lg">📋</span> Copiar al portapapeles
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -225,7 +321,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                   💌 ENVÍOS A COSTA RICA
                 </p>
                 <p className="text-xs text-gray-700">
-                  Coordina directamente con Pame por WhatsApp para detalles de
+                  Coordina directamente con Lylie por WhatsApp para detalles de
                   envío y formas de pago.
                 </p>
               </div>
